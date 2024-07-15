@@ -43,4 +43,4 @@ matched_items = process_patch(json_file, 'patch.txt', directory)
 
 print("匹配的项：")
 for item in matched_items:
-    print(item)s
+    print(item)
