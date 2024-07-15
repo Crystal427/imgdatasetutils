@@ -39,6 +39,6 @@ def convert_images(src_dir, dst_dir, max_workers=32):
                 print(f"Error processing file: {str(e)}")
 
 # 使用示例
-src_directory = r'E:\Datasets\dataset\SDXL_large'
-dst_directory = r'F:\Datasets\SDXL2'
+src_directory = r'F:\SDXL_large'
+dst_directory = r'F:\SDXL_webp'
 convert_images(src_directory, dst_directory)
