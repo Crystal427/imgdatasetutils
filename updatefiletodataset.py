@@ -153,7 +153,7 @@ def update_dataset(update_dir, dataset_dir):
                 process_artist_folder(artist_path, dataset_dir)
 
 if __name__ == "__main__":
-    update_dir = r'F:\Crystal\Downloads\OneDrive_1_7-10-2024\todo_ex'
+    update_dir = r'E:\Datasets\1'
     dataset_dir = r'E:\Datasets\SDXL_large_Modified'
     update_dataset(update_dir, dataset_dir)
     print("数据集更新完成！")
