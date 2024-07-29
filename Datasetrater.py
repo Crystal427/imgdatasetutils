@@ -65,7 +65,7 @@ def _fn_predict(image, model):
     percentile = _get_percentile(x, y, weighted_mean)
     return weighted_mean, percentile, scores
 
-def process_image_file(image_path, model_name_classify='mobilenetv3_v1.3_dist', model_name_real='mobilenetv3_v1.2_dist', aesthetic_model=_DEFAULT_MODEL):
+def process_image_file(image_path, model_name_classify='mobilenetv3_v1.3_dist', model_name_real='mobilenetv3_v1.2_dist',model_name_wd14='SwinV2_v3', aesthetic_model=_DEFAULT_MODEL):
     image = Image.open(image_path)
 
     # Resize image to be close to 1024x1024 while maintaining aspect ratio
@@ -80,7 +80,7 @@ def process_image_file(image_path, model_name_classify='mobilenetv3_v1.3_dist', 
     classify_scores = anime_classify_score(image, model_name=model_name_classify)
     real_scores = anime_real_score(image, model_name=model_name_real)
 
-    rating, features, chars = get_wd14_tags(image, general_threshold = 0.2)
+    rating, features, chars = get_wd14_tags(image, general_threshold = 0.2,model_name=model_name_wd14)
 
     # highres aesthetic rating consume a lot of performance, the model is trained by 448*448, Resize again
     aesthetic_image = image.resize((image.size[0] // 2, image.size[1] // 2), Image.Resampling.LANCZOS)
